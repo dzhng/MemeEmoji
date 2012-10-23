@@ -22,6 +22,9 @@
 		6320481E16362DBE00FE566F /* MemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6320481D16362DBE00FE566F /* MemeModel.m */; };
 		637A4FE7163647490043209E /* MemeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A4FE6163647490043209E /* MemeTabBarController.m */; };
 		637A4FEF16365BB80043209E /* cell_bg_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FEE16365BB80043209E /* cell_bg_phone.png */; };
+		637A4FF11636633C0043209E /* cell_bg_phone_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF01636633C0043209E /* cell_bg_phone_selected.png */; };
+		637A4FF416366A390043209E /* now_kiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF216366A390043209E /* now_kiss.png */; };
+		637A4FF516366A390043209E /* sweet_jesus_have_mercy.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */; };
 		63887B7C16363B6B00E7092C /* MemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63887B7B16363B6B00E7092C /* MemeCell.m */; };
 		63887C3F1636417000E7092C /* actually_its_not_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C001636417000E7092C /* actually_its_not_ok.png */; };
 		63887C401636417000E7092C /* actually_pretty_badass.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C011636417000E7092C /* actually_pretty_badass.png */; };
@@ -63,7 +66,6 @@
 		63887C641636417000E7092C /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C251636417000E7092C /* no.png */; };
 		63887C651636417000E7092C /* not_bad.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C261636417000E7092C /* not_bad.png */; };
 		63887C661636417000E7092C /* nothing_to_do_here.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C271636417000E7092C /* nothing_to_do_here.png */; };
-		63887C671636417000E7092C /* now_kiss.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63887C281636417000E7092C /* now_kiss.jpg */; };
 		63887C681636417000E7092C /* oh_god_why.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C291636417000E7092C /* oh_god_why.png */; };
 		63887C691636417000E7092C /* oh_stop_it_you.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C2A1636417000E7092C /* oh_stop_it_you.png */; };
 		63887C6A1636417000E7092C /* okay.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C2B1636417000E7092C /* okay.png */; };
@@ -74,7 +76,6 @@
 		63887C6F1636417000E7092C /* sad_forever.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C301636417000E7092C /* sad_forever.png */; };
 		63887C701636417000E7092C /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C311636417000E7092C /* smile.png */; };
 		63887C711636417000E7092C /* suprised_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C321636417000E7092C /* suprised_cat.png */; };
-		63887C721636417000E7092C /* sweet_jeasus_have_mercy.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C331636417000E7092C /* sweet_jeasus_have_mercy.png */; };
 		63887C731636417000E7092C /* troll.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C341636417000E7092C /* troll.png */; };
 		63887C741636417000E7092C /* true_story.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C351636417000E7092C /* true_story.png */; };
 		63887C751636417000E7092C /* wait.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C361636417000E7092C /* wait.png */; };
@@ -111,6 +112,9 @@
 		637A4FE5163647490043209E /* MemeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeTabBarController.h; path = Controllers/MemeTabBarController.h; sourceTree = SOURCE_ROOT; };
 		637A4FE6163647490043209E /* MemeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeTabBarController.m; path = Controllers/MemeTabBarController.m; sourceTree = SOURCE_ROOT; };
 		637A4FEE16365BB80043209E /* cell_bg_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg_phone.png; sourceTree = "<group>"; };
+		637A4FF01636633C0043209E /* cell_bg_phone_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg_phone_selected.png; sourceTree = "<group>"; };
+		637A4FF216366A390043209E /* now_kiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = now_kiss.png; sourceTree = "<group>"; };
+		637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweet_jesus_have_mercy.png; sourceTree = "<group>"; };
 		63887B7A16363B6B00E7092C /* MemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeCell.h; path = Views/MemeCell.h; sourceTree = SOURCE_ROOT; };
 		63887B7B16363B6B00E7092C /* MemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeCell.m; path = Views/MemeCell.m; sourceTree = SOURCE_ROOT; };
 		63887C001636417000E7092C /* actually_its_not_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actually_its_not_ok.png; sourceTree = "<group>"; };
@@ -153,7 +157,6 @@
 		63887C251636417000E7092C /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
 		63887C261636417000E7092C /* not_bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = not_bad.png; sourceTree = "<group>"; };
 		63887C271636417000E7092C /* nothing_to_do_here.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nothing_to_do_here.png; sourceTree = "<group>"; };
-		63887C281636417000E7092C /* now_kiss.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = now_kiss.jpg; sourceTree = "<group>"; };
 		63887C291636417000E7092C /* oh_god_why.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oh_god_why.png; sourceTree = "<group>"; };
 		63887C2A1636417000E7092C /* oh_stop_it_you.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oh_stop_it_you.png; sourceTree = "<group>"; };
 		63887C2B1636417000E7092C /* okay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okay.png; sourceTree = "<group>"; };
@@ -164,7 +167,6 @@
 		63887C301636417000E7092C /* sad_forever.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad_forever.png; sourceTree = "<group>"; };
 		63887C311636417000E7092C /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		63887C321636417000E7092C /* suprised_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suprised_cat.png; sourceTree = "<group>"; };
-		63887C331636417000E7092C /* sweet_jeasus_have_mercy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweet_jeasus_have_mercy.png; sourceTree = "<group>"; };
 		63887C341636417000E7092C /* troll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = troll.png; sourceTree = "<group>"; };
 		63887C351636417000E7092C /* true_story.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true_story.png; sourceTree = "<group>"; };
 		63887C361636417000E7092C /* wait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait.png; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		632047FA163614B100FE566F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				637A4FF01636633C0043209E /* cell_bg_phone_selected.png */,
 				637A4FEE16365BB80043209E /* cell_bg_phone.png */,
 				632047FB163614B100FE566F /* MemeEmoji-Info.plist */,
 				632047FC163614B100FE566F /* InfoPlist.strings */,
@@ -282,6 +285,8 @@
 		63887BFF1636417000E7092C /* Memes */ = {
 			isa = PBXGroup;
 			children = (
+				637A4FF216366A390043209E /* now_kiss.png */,
+				637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */,
 				63887C001636417000E7092C /* actually_its_not_ok.png */,
 				63887C011636417000E7092C /* actually_pretty_badass.png */,
 				63887C021636417000E7092C /* all_the_things.png */,
@@ -322,7 +327,6 @@
 				63887C251636417000E7092C /* no.png */,
 				63887C261636417000E7092C /* not_bad.png */,
 				63887C271636417000E7092C /* nothing_to_do_here.png */,
-				63887C281636417000E7092C /* now_kiss.jpg */,
 				63887C291636417000E7092C /* oh_god_why.png */,
 				63887C2A1636417000E7092C /* oh_stop_it_you.png */,
 				63887C2B1636417000E7092C /* okay.png */,
@@ -333,7 +337,6 @@
 				63887C301636417000E7092C /* sad_forever.png */,
 				63887C311636417000E7092C /* smile.png */,
 				63887C321636417000E7092C /* suprised_cat.png */,
-				63887C331636417000E7092C /* sweet_jeasus_have_mercy.png */,
 				63887C341636417000E7092C /* troll.png */,
 				63887C351636417000E7092C /* true_story.png */,
 				63887C361636417000E7092C /* wait.png */,
@@ -447,7 +450,6 @@
 				63887C641636417000E7092C /* no.png in Resources */,
 				63887C651636417000E7092C /* not_bad.png in Resources */,
 				63887C661636417000E7092C /* nothing_to_do_here.png in Resources */,
-				63887C671636417000E7092C /* now_kiss.jpg in Resources */,
 				63887C681636417000E7092C /* oh_god_why.png in Resources */,
 				63887C691636417000E7092C /* oh_stop_it_you.png in Resources */,
 				63887C6A1636417000E7092C /* okay.png in Resources */,
@@ -458,7 +460,6 @@
 				63887C6F1636417000E7092C /* sad_forever.png in Resources */,
 				63887C701636417000E7092C /* smile.png in Resources */,
 				63887C711636417000E7092C /* suprised_cat.png in Resources */,
-				63887C721636417000E7092C /* sweet_jeasus_have_mercy.png in Resources */,
 				63887C731636417000E7092C /* troll.png in Resources */,
 				63887C741636417000E7092C /* true_story.png in Resources */,
 				63887C751636417000E7092C /* wait.png in Resources */,
@@ -471,6 +472,9 @@
 				63887C7C1636417000E7092C /* yes.png in Resources */,
 				63887C7D1636417000E7092C /* you_didnt_say.png in Resources */,
 				637A4FEF16365BB80043209E /* cell_bg_phone.png in Resources */,
+				637A4FF11636633C0043209E /* cell_bg_phone_selected.png in Resources */,
+				637A4FF416366A390043209E /* now_kiss.png in Resources */,
+				637A4FF516366A390043209E /* sweet_jesus_have_mercy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

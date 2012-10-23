@@ -19,6 +19,15 @@
     return self;
 }
 
+- (void)setSelected:(BOOL)selected
+{
+    if (selected) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone_selected.png"]];
+    } else {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
