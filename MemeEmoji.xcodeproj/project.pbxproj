@@ -25,6 +25,7 @@
 		637A4FF11636633C0043209E /* cell_bg_phone_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF01636633C0043209E /* cell_bg_phone_selected.png */; };
 		637A4FF416366A390043209E /* now_kiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF216366A390043209E /* now_kiss.png */; };
 		637A4FF516366A390043209E /* sweet_jesus_have_mercy.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */; };
+		637A4FF716366C5D0043209E /* fffuuuuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF616366C5D0043209E /* fffuuuuu.png */; };
 		63887B7C16363B6B00E7092C /* MemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63887B7B16363B6B00E7092C /* MemeCell.m */; };
 		63887C3F1636417000E7092C /* actually_its_not_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C001636417000E7092C /* actually_its_not_ok.png */; };
 		63887C401636417000E7092C /* actually_pretty_badass.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C011636417000E7092C /* actually_pretty_badass.png */; };
@@ -44,7 +45,6 @@
 		63887C4E1636417000E7092C /* epic_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C0F1636417000E7092C /* epic_win.png */; };
 		63887C4F1636417000E7092C /* facepalm.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C101636417000E7092C /* facepalm.png */; };
 		63887C501636417000E7092C /* fapfap.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C111636417000E7092C /* fapfap.png */; };
-		63887C511636417000E7092C /* fffuuuuu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63887C121636417000E7092C /* fffuuuuu.jpg */; };
 		63887C521636417000E7092C /* forever_alone.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C131636417000E7092C /* forever_alone.png */; };
 		63887C531636417000E7092C /* fuck_yea.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C141636417000E7092C /* fuck_yea.png */; };
 		63887C541636417000E7092C /* fucking_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C151636417000E7092C /* fucking_done.png */; };
@@ -115,6 +115,7 @@
 		637A4FF01636633C0043209E /* cell_bg_phone_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg_phone_selected.png; sourceTree = "<group>"; };
 		637A4FF216366A390043209E /* now_kiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = now_kiss.png; sourceTree = "<group>"; };
 		637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweet_jesus_have_mercy.png; sourceTree = "<group>"; };
+		637A4FF616366C5D0043209E /* fffuuuuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fffuuuuu.png; sourceTree = "<group>"; };
 		63887B7A16363B6B00E7092C /* MemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeCell.h; path = Views/MemeCell.h; sourceTree = SOURCE_ROOT; };
 		63887B7B16363B6B00E7092C /* MemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeCell.m; path = Views/MemeCell.m; sourceTree = SOURCE_ROOT; };
 		63887C001636417000E7092C /* actually_its_not_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actually_its_not_ok.png; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		63887C0F1636417000E7092C /* epic_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epic_win.png; sourceTree = "<group>"; };
 		63887C101636417000E7092C /* facepalm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facepalm.png; sourceTree = "<group>"; };
 		63887C111636417000E7092C /* fapfap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fapfap.png; sourceTree = "<group>"; };
-		63887C121636417000E7092C /* fffuuuuu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fffuuuuu.jpg; sourceTree = "<group>"; };
 		63887C131636417000E7092C /* forever_alone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forever_alone.png; sourceTree = "<group>"; };
 		63887C141636417000E7092C /* fuck_yea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuck_yea.png; sourceTree = "<group>"; };
 		63887C151636417000E7092C /* fucking_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fucking_done.png; sourceTree = "<group>"; };
@@ -285,6 +285,7 @@
 		63887BFF1636417000E7092C /* Memes */ = {
 			isa = PBXGroup;
 			children = (
+				637A4FF616366C5D0043209E /* fffuuuuu.png */,
 				637A4FF216366A390043209E /* now_kiss.png */,
 				637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */,
 				63887C001636417000E7092C /* actually_its_not_ok.png */,
@@ -305,7 +306,6 @@
 				63887C0F1636417000E7092C /* epic_win.png */,
 				63887C101636417000E7092C /* facepalm.png */,
 				63887C111636417000E7092C /* fapfap.png */,
-				63887C121636417000E7092C /* fffuuuuu.jpg */,
 				63887C131636417000E7092C /* forever_alone.png */,
 				63887C141636417000E7092C /* fuck_yea.png */,
 				63887C151636417000E7092C /* fucking_done.png */,
@@ -428,7 +428,6 @@
 				63887C4E1636417000E7092C /* epic_win.png in Resources */,
 				63887C4F1636417000E7092C /* facepalm.png in Resources */,
 				63887C501636417000E7092C /* fapfap.png in Resources */,
-				63887C511636417000E7092C /* fffuuuuu.jpg in Resources */,
 				63887C521636417000E7092C /* forever_alone.png in Resources */,
 				63887C531636417000E7092C /* fuck_yea.png in Resources */,
 				63887C541636417000E7092C /* fucking_done.png in Resources */,
@@ -475,6 +474,7 @@
 				637A4FF11636633C0043209E /* cell_bg_phone_selected.png in Resources */,
 				637A4FF416366A390043209E /* now_kiss.png in Resources */,
 				637A4FF516366A390043209E /* sweet_jesus_have_mercy.png in Resources */,
+				637A4FF716366C5D0043209E /* fffuuuuu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

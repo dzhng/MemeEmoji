@@ -55,8 +55,8 @@
         // set view settings
         NSDictionary* meme = [[[MemeModel model] memes] objectAtIndex:row];
         
-        NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
-        cell.image.image = [UIImage imageWithContentsOfFile:imageName];
+        //NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
+        cell.image.image = [UIImage imageNamed:meme[@"file"]];
         cell.title.text = meme[@"title"];
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
     }
