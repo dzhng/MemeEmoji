@@ -52,7 +52,9 @@
     if(row < [[[MemeModel model] memes] count]) {
         // set view settings
         NSDictionary* meme = [[[MemeModel model] memes] objectAtIndex:row];
-        cell.image.image = [UIImage imageNamed:meme[@"file"]];
+        
+        NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
+        cell.image.image = [UIImage imageWithContentsOfFile:imageName];
         cell.title.text = meme[@"title"];
     }
     
@@ -67,22 +69,18 @@
     
     // run sanity check first
     if(row < [[[MemeModel model] memes] count]) {
-        // get roadtrip
-        //RoadtripModel* roadtrip = [[[AppModel model] roadtrips] objectAtIndex:row];
-        // set current roadtrip
-        //[[AppModel model] setCurrentRoadtrip:roadtrip];
+        // get the meme selected
+        NSDictionary* meme = [[[MemeModel model] memes] objectAtIndex:row];
+        // copy meme to clipboard
+        UIPasteboard* pb = [UIPasteboard generalPasteboard];
+        
+        NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
+        NSData* imData = [NSData dataWithContentsOfFile:imageName];
+        
+        [pb setData:imData forPasteboardType:@"public.png"];
+        
+        NSLog(@"%@ copied", meme[@"title"]);
     }
 }
-
-#pragma mark Collection View Flow Layout functions
-
-/*- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        return CGSizeMake(500, 400);
-    } else {
-        return CGSizeMake(300, 264);
-    }
-}*/
 
 @end

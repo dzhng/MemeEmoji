@@ -20,6 +20,7 @@
 		63204810163614B100FE566F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6320480E163614B100FE566F /* MainStoryboard_iPad.storyboard */; };
 		6320481B16361D9000FE566F /* MemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6320481A16361D9000FE566F /* MemeViewController.m */; };
 		6320481E16362DBE00FE566F /* MemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6320481D16362DBE00FE566F /* MemeModel.m */; };
+		637A4FE7163647490043209E /* MemeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A4FE6163647490043209E /* MemeTabBarController.m */; };
 		63887B7C16363B6B00E7092C /* MemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63887B7B16363B6B00E7092C /* MemeCell.m */; };
 		63887C3F1636417000E7092C /* actually_its_not_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C001636417000E7092C /* actually_its_not_ok.png */; };
 		63887C401636417000E7092C /* actually_pretty_badass.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C011636417000E7092C /* actually_pretty_badass.png */; };
@@ -106,6 +107,8 @@
 		6320481A16361D9000FE566F /* MemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeViewController.m; path = Controllers/MemeViewController.m; sourceTree = SOURCE_ROOT; };
 		6320481C16362DBE00FE566F /* MemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeModel.h; path = Models/MemeModel.h; sourceTree = SOURCE_ROOT; };
 		6320481D16362DBE00FE566F /* MemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeModel.m; path = Models/MemeModel.m; sourceTree = SOURCE_ROOT; };
+		637A4FE5163647490043209E /* MemeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeTabBarController.h; path = Controllers/MemeTabBarController.h; sourceTree = SOURCE_ROOT; };
+		637A4FE6163647490043209E /* MemeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeTabBarController.m; path = Controllers/MemeTabBarController.m; sourceTree = SOURCE_ROOT; };
 		63887B7A16363B6B00E7092C /* MemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeCell.h; path = Views/MemeCell.h; sourceTree = SOURCE_ROOT; };
 		63887B7B16363B6B00E7092C /* MemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeCell.m; path = Views/MemeCell.m; sourceTree = SOURCE_ROOT; };
 		63887C001636417000E7092C /* actually_its_not_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actually_its_not_ok.png; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 		632047E4163614B100FE566F = {
 			isa = PBXGroup;
 			children = (
+				637A4FE9163647520043209E /* Controllers */,
 				63887B7E16363B6F00E7092C /* Views */,
 				6320481F16362DC400FE566F /* Models */,
 				632047F9163614B100FE566F /* MemeEmoji */,
@@ -220,8 +224,6 @@
 		632047F9163614B100FE566F /* MemeEmoji */ = {
 			isa = PBXGroup;
 			children = (
-				6320481916361D9000FE566F /* MemeViewController.h */,
-				6320481A16361D9000FE566F /* MemeViewController.m */,
 				63204802163614B100FE566F /* MemeAppDelegate.h */,
 				63204803163614B100FE566F /* MemeAppDelegate.m */,
 				6320480B163614B100FE566F /* MainStoryboard_iPhone.storyboard */,
@@ -252,6 +254,17 @@
 				6320481D16362DBE00FE566F /* MemeModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		637A4FE9163647520043209E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6320481916361D9000FE566F /* MemeViewController.h */,
+				6320481A16361D9000FE566F /* MemeViewController.m */,
+				637A4FE5163647490043209E /* MemeTabBarController.h */,
+				637A4FE6163647490043209E /* MemeTabBarController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		63887B7E16363B6F00E7092C /* Views */ = {
@@ -469,6 +482,7 @@
 				6320481B16361D9000FE566F /* MemeViewController.m in Sources */,
 				6320481E16362DBE00FE566F /* MemeModel.m in Sources */,
 				63887B7C16363B6B00E7092C /* MemeCell.m in Sources */,
+				637A4FE7163647490043209E /* MemeTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
