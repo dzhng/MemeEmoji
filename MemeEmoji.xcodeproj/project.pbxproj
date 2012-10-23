@@ -26,6 +26,10 @@
 		637A4FF416366A390043209E /* now_kiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF216366A390043209E /* now_kiss.png */; };
 		637A4FF516366A390043209E /* sweet_jesus_have_mercy.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */; };
 		637A4FF716366C5D0043209E /* fffuuuuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF616366C5D0043209E /* fffuuuuu.png */; };
+		637A4FFA163674D50043209E /* tutorial2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF8163674D50043209E /* tutorial2.PNG */; };
+		637A4FFB163674D50043209E /* tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FF9163674D50043209E /* tutorial3.png */; };
+		637A4FFE1636772B0043209E /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A4FFD1636772B0043209E /* HelpViewController.m */; };
+		637A5000163678460043209E /* HelpViewPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FFF163678460043209E /* HelpViewPhone.xib */; };
 		63887B7C16363B6B00E7092C /* MemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63887B7B16363B6B00E7092C /* MemeCell.m */; };
 		63887C3F1636417000E7092C /* actually_its_not_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C001636417000E7092C /* actually_its_not_ok.png */; };
 		63887C401636417000E7092C /* actually_pretty_badass.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C011636417000E7092C /* actually_pretty_badass.png */; };
@@ -116,6 +120,11 @@
 		637A4FF216366A390043209E /* now_kiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = now_kiss.png; sourceTree = "<group>"; };
 		637A4FF316366A390043209E /* sweet_jesus_have_mercy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweet_jesus_have_mercy.png; sourceTree = "<group>"; };
 		637A4FF616366C5D0043209E /* fffuuuuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fffuuuuu.png; sourceTree = "<group>"; };
+		637A4FF8163674D50043209E /* tutorial2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial2.PNG; sourceTree = "<group>"; };
+		637A4FF9163674D50043209E /* tutorial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial3.png; sourceTree = "<group>"; };
+		637A4FFC1636772B0043209E /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpViewController.h; path = Controllers/HelpViewController.h; sourceTree = "<group>"; };
+		637A4FFD1636772B0043209E /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpViewController.m; path = Controllers/HelpViewController.m; sourceTree = "<group>"; };
+		637A4FFF163678460043209E /* HelpViewPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HelpViewPhone.xib; path = Views/HelpViewPhone.xib; sourceTree = "<group>"; };
 		63887B7A16363B6B00E7092C /* MemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeCell.h; path = Views/MemeCell.h; sourceTree = SOURCE_ROOT; };
 		63887B7B16363B6B00E7092C /* MemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeCell.m; path = Views/MemeCell.m; sourceTree = SOURCE_ROOT; };
 		63887C001636417000E7092C /* actually_its_not_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actually_its_not_ok.png; sourceTree = "<group>"; };
@@ -240,6 +249,8 @@
 		632047FA163614B100FE566F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				637A4FF8163674D50043209E /* tutorial2.PNG */,
+				637A4FF9163674D50043209E /* tutorial3.png */,
 				637A4FF01636633C0043209E /* cell_bg_phone_selected.png */,
 				637A4FEE16365BB80043209E /* cell_bg_phone.png */,
 				632047FB163614B100FE566F /* MemeEmoji-Info.plist */,
@@ -269,6 +280,8 @@
 				6320481A16361D9000FE566F /* MemeViewController.m */,
 				637A4FE5163647490043209E /* MemeTabBarController.h */,
 				637A4FE6163647490043209E /* MemeTabBarController.m */,
+				637A4FFC1636772B0043209E /* HelpViewController.h */,
+				637A4FFD1636772B0043209E /* HelpViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +291,7 @@
 			children = (
 				63887B7A16363B6B00E7092C /* MemeCell.h */,
 				63887B7B16363B6B00E7092C /* MemeCell.m */,
+				637A4FFF163678460043209E /* HelpViewPhone.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -475,6 +489,9 @@
 				637A4FF416366A390043209E /* now_kiss.png in Resources */,
 				637A4FF516366A390043209E /* sweet_jesus_have_mercy.png in Resources */,
 				637A4FF716366C5D0043209E /* fffuuuuu.png in Resources */,
+				637A4FFA163674D50043209E /* tutorial2.PNG in Resources */,
+				637A4FFB163674D50043209E /* tutorial3.png in Resources */,
+				637A5000163678460043209E /* HelpViewPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +508,7 @@
 				6320481E16362DBE00FE566F /* MemeModel.m in Sources */,
 				63887B7C16363B6B00E7092C /* MemeCell.m in Sources */,
 				637A4FE7163647490043209E /* MemeTabBarController.m in Sources */,
+				637A4FFE1636772B0043209E /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

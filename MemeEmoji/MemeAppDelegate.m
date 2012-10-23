@@ -13,6 +13,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // get app settings
+    
+    // enable emoji keyboard
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:
+                      @"../../Library/Preferences/com.apple.Preferences.plist"];
+    NSMutableDictionary *dict =
+    [NSMutableDictionary dictionaryWithContentsOfFile:path];
+    [dict setObject:[NSNumber numberWithBool:YES] forKey:@"KeyboardEmojiEverywhere"];
+    [dict writeToFile:path atomically:NO];
+    
     return YES;
 }
 							
