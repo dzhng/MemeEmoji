@@ -13,6 +13,9 @@
 // array containing dictionary of memes
 @property(retain, nonatomic) NSArray* memes;
 
+// array containing dictionary of favorites
+@property(retain, nonatomic) NSMutableArray* favorites;
+
 // get singleton instance
 + (MemeModel*)model;
 

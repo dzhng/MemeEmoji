@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemeModel.h"
 
 @interface MemeAppDelegate : UIResponder <UIApplicationDelegate>
 {

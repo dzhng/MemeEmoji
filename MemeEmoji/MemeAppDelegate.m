@@ -53,6 +53,16 @@
         shouldSave = true;
     }
     
+    // set favoriates array for model
+    if (!settings[@"favorites"]) {
+        NSMutableArray* favorites = [[NSMutableArray alloc] init];
+        settings[@"favorites"] = favorites;
+        [[MemeModel model] setFavorites:favorites];
+        shouldSave = true;
+    } else {
+        [[MemeModel model] setFavorites:settings[@"favorites"]];
+    }
+    
     return YES;
 }
 							
@@ -100,7 +110,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-
 }
 
 @end

@@ -1,24 +1,24 @@
 //
-//  MemeViewController.m
+//  FavoritesViewController.m
 //  MemeEmoji
 //
-//  Created by David Zhang on 10/22/12.
+//  Created by David Zhang on 10/23/12.
 //  Copyright (c) 2012 David Zhang. All rights reserved.
 //
 
-#import "MemeViewController.h"
+#import "FavoritesViewController.h"
 
-@interface MemeViewController ()
+@interface FavoritesViewController ()
 
 @end
 
-@implementation MemeViewController
+@implementation FavoritesViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.models = [[MemeModel model] memes];
+    self.models = [[MemeModel model] favorites];
 }
 
 - (void)didReceiveMemoryWarning

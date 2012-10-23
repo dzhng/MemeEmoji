@@ -94,6 +94,8 @@
 		63887C7D1636417000E7092C /* you_didnt_say.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C3E1636417000E7092C /* you_didnt_say.png */; };
 		63F249B216368D7A00CDF8B4 /* view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F249B116368D7A00CDF8B4 /* view_bg.png */; };
 		63F249B5163692FC00CDF8B4 /* tutorial1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 63F249B4163692FC00CDF8B4 /* tutorial1.PNG */; };
+		63F249B81637318500CDF8B4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F249B71637318500CDF8B4 /* FavoritesViewController.m */; };
+		63F249BB163731D500CDF8B4 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F249BA163731D500CDF8B4 /* DisplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +195,10 @@
 		63887C3E1636417000E7092C /* you_didnt_say.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = you_didnt_say.png; sourceTree = "<group>"; };
 		63F249B116368D7A00CDF8B4 /* view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_bg.png; sourceTree = "<group>"; };
 		63F249B4163692FC00CDF8B4 /* tutorial1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial1.PNG; sourceTree = "<group>"; };
+		63F249B61637318500CDF8B4 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = Controllers/FavoritesViewController.h; sourceTree = "<group>"; };
+		63F249B71637318500CDF8B4 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = Controllers/FavoritesViewController.m; sourceTree = "<group>"; };
+		63F249B9163731D500CDF8B4 /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayViewController.h; path = Controllers/DisplayViewController.h; sourceTree = "<group>"; };
+		63F249BA163731D500CDF8B4 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayViewController.m; path = Controllers/DisplayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +297,10 @@
 				637A4FE6163647490043209E /* MemeTabBarController.m */,
 				637A4FFC1636772B0043209E /* HelpViewController.h */,
 				637A4FFD1636772B0043209E /* HelpViewController.m */,
+				63F249B61637318500CDF8B4 /* FavoritesViewController.h */,
+				63F249B71637318500CDF8B4 /* FavoritesViewController.m */,
+				63F249B9163731D500CDF8B4 /* DisplayViewController.h */,
+				63F249BA163731D500CDF8B4 /* DisplayViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -521,6 +531,8 @@
 				63887B7C16363B6B00E7092C /* MemeCell.m in Sources */,
 				637A4FE7163647490043209E /* MemeTabBarController.m in Sources */,
 				637A4FFE1636772B0043209E /* HelpViewController.m in Sources */,
+				63F249B81637318500CDF8B4 /* FavoritesViewController.m in Sources */,
+				63F249BB163731D500CDF8B4 /* DisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
