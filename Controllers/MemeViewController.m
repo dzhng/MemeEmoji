@@ -10,6 +10,9 @@
 
 @interface MemeViewController ()
 
+// confirmation timer callback
+- (void)confirmTimerDone:(NSTimer*)timer;
+
 @end
 
 @implementation MemeViewController
@@ -19,6 +22,14 @@
     [super viewDidLoad];
     
     self.collectionView.allowsMultipleSelection = false;
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"view_bg.png"]];
+    
+    // make confirmation view
+    confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 300, 100)];
+    UIImage* confirmImage = [UIImage imageNamed:@"select_confirm.png"];
+    confirmView.image = confirmImage;
+    confirmView.alpha = 0;
+    [self.view addSubview:confirmView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +94,22 @@
         
         [pb setData:imData forPasteboardType:@"public.png"];
         NSLog(@"%@ copied", meme[@"title"]);
+        
+        // show copy confirm image
+        confirmView.alpha = 1;
+        
+        // set off timer
+        [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(confirmTimerDone:) userInfo:nil repeats:NO];
     }
+}
+
+- (void)confirmTimerDone:(NSTimer*)timer
+{
+    // remove confirm view
+    [UIView animateWithDuration:0.4
+            animations:^{confirmView.alpha = 0.0;}
+            completion:^(BOOL finished){
+            }];
 }
 
 @end

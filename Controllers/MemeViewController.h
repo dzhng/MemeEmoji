@@ -11,5 +11,9 @@
 #import "MemeCell.h"
 
 @interface MemeViewController : UICollectionViewController
+{
+    // view to show confirm image
+    UIImageView* confirmView;
+}
 
 @end
