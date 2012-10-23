@@ -32,12 +32,24 @@
     scrollView.contentSize = scrollView.frame.size;
     scrollView.frame = self.view.frame;
     [self.view addSubview:scrollView];
+    
+    // wire up feedback button
+    UIButton* feedbackButton = (UIButton*)[scrollView viewWithTag:10];
+    [feedbackButton addTarget:self action:@selector(feedbackPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)feedbackPressed:(id)sender {
+    // start mail app
+    NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"mailto:?to=%@&subject=%@",
+                                                @"founders@tigervine.com",
+                                                [@"Meme Emoji Feedback" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]]];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end
