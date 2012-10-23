@@ -10,4 +10,13 @@
 
 @interface MemeModel : NSObject
 
+// array containing dictionary of memes
+@property(retain, nonatomic) NSArray* memes;
+
+// get singleton instance
++ (MemeModel*)meme;
+
+// initialize instance
+- (id)init;
+
 @end
