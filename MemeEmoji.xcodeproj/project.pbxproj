@@ -18,7 +18,7 @@
 		6320480A163614B100FE566F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63204809163614B100FE566F /* Default-568h@2x.png */; };
 		6320480D163614B100FE566F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6320480B163614B100FE566F /* MainStoryboard_iPhone.storyboard */; };
 		63204810163614B100FE566F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6320480E163614B100FE566F /* MainStoryboard_iPad.storyboard */; };
-		63204813163614B100FE566F /* MemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63204812163614B100FE566F /* MemeViewController.m */; };
+		6320481B16361D9000FE566F /* MemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6320481A16361D9000FE566F /* MemeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		63204809163614B100FE566F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6320480C163614B100FE566F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		6320480F163614B100FE566F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		63204811163614B100FE566F /* MemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemeViewController.h; sourceTree = "<group>"; };
-		63204812163614B100FE566F /* MemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemeViewController.m; sourceTree = "<group>"; };
+		6320481916361D9000FE566F /* MemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeViewController.h; path = Controllers/MemeViewController.h; sourceTree = SOURCE_ROOT; };
+		6320481A16361D9000FE566F /* MemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeViewController.m; path = Controllers/MemeViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +85,12 @@
 		632047F9163614B100FE566F /* MemeEmoji */ = {
 			isa = PBXGroup;
 			children = (
+				6320481916361D9000FE566F /* MemeViewController.h */,
+				6320481A16361D9000FE566F /* MemeViewController.m */,
 				63204802163614B100FE566F /* MemeAppDelegate.h */,
 				63204803163614B100FE566F /* MemeAppDelegate.m */,
 				6320480B163614B100FE566F /* MainStoryboard_iPhone.storyboard */,
 				6320480E163614B100FE566F /* MainStoryboard_iPad.storyboard */,
-				63204811163614B100FE566F /* MemeViewController.h */,
-				63204812163614B100FE566F /* MemeViewController.m */,
 				632047FA163614B100FE566F /* Supporting Files */,
 			);
 			path = MemeEmoji;
@@ -180,7 +180,7 @@
 			files = (
 				63204800163614B100FE566F /* main.m in Sources */,
 				63204804163614B100FE566F /* MemeAppDelegate.m in Sources */,
-				63204813163614B100FE566F /* MemeViewController.m in Sources */,
+				6320481B16361D9000FE566F /* MemeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
