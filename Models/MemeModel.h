@@ -14,7 +14,7 @@
 @property(retain, nonatomic) NSArray* memes;
 
 // get singleton instance
-+ (MemeModel*)meme;
++ (MemeModel*)model;
 
 // initialize instance
 - (id)init;

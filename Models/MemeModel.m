@@ -12,7 +12,7 @@
 
 static MemeModel* model = nil;
 
-+ (MemeModel*)meme
++ (MemeModel*)model
 {
     if (model == nil) {
         model = [[super alloc] init];

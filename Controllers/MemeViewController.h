@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemeModel.h"
+#import "MemeCell.h"
 
 @interface MemeViewController : UICollectionViewController
+
+@property (weak, nonatomic) IBOutlet UICollectionView *view;
 
 @end
