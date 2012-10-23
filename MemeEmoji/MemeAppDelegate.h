@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface MemeAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    // where the save file is located
+    NSString* savePath;
+    
+    // app settings
+    NSMutableDictionary* settings;
+    
+    BOOL shouldSave;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

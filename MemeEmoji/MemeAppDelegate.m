@@ -12,17 +12,46 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    shouldSave = false;
+    
+    // get save path
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    savePath = [docPath stringByAppendingPathComponent:@"meme.plist"];
+    NSLog(@"save path: %@", savePath);
     
     // get app settings
+    NSData* settingsXML = [[NSFileManager defaultManager] contentsAtPath:savePath];
+    if (settingsXML) {
+        NSError* readError = nil;
+        NSPropertyListFormat format;
+        settings = (NSMutableDictionary *)[NSPropertyListSerialization
+                                propertyListWithData:settingsXML
+                                options:NSPropertyListMutableContainersAndLeaves
+                                format:&format
+                                error:&readError];
+    } else {
+        // since we can't read form property list, create a new settings array
+        settings = [[NSMutableDictionary alloc] init];
+    }
     
-    // enable emoji keyboard
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:
-                      @"../../Library/Preferences/com.apple.Preferences.plist"];
-    NSMutableDictionary *dict =
-    [NSMutableDictionary dictionaryWithContentsOfFile:path];
-    [dict setObject:[NSNumber numberWithBool:YES] forKey:@"KeyboardEmojiEverywhere"];
-    [dict writeToFile:path atomically:NO];
+    if (!settings[@"emojiEnabled"]) {
+        NSLog(@"Emoji not enabled");
+        
+        settings[@"emojiEnabled"] = [NSNumber numberWithBool:TRUE];
+        
+        // enable emoji keyboard
+        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:
+                          @"../../Library/Preferences/com.apple.Preferences.plist"];
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        [dict setObject:[NSNumber numberWithBool:YES] forKey:@"KeyboardEmojiEverywhere"];
+        if (![dict writeToFile:path atomically:NO]) {
+            NSLog(@"error writing to emoji plist");
+        }
+        
+        // set save flag
+        shouldSave = true;
+    }
     
     return YES;
 }
@@ -35,8 +64,28 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // save settings
+    if (shouldSave) {
+        NSLog(@"saving");
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:savePath]) {
+            NSLog(@"First time using app, creating file");
+            [[NSFileManager defaultManager] createFileAtPath:savePath contents:nil
+                                                  attributes:@{NSFileType:NSFileTypeRegular}];
+        }
+        
+        NSString *error = nil;
+        NSData *data = [NSPropertyListSerialization
+                        dataFromPropertyList:settings
+                        format:NSPropertyListXMLFormat_v1_0
+                        errorDescription:&error];
+        
+        if (data) {
+            [data writeToFile:savePath atomically:NO];
+        } else {
+            NSLog(@"plist error: %@", error);
+        }
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -51,7 +100,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
 }
 
 @end

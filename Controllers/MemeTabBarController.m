@@ -17,10 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //self.delegate = self;
-    
-    // TODO: Check if emoji is installed. If so, remove Install Emoji tab
 }
 
 - (void)didReceiveMemoryWarning
