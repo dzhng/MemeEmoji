@@ -24,7 +24,8 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSLog(@"collection view received memory warning");
 }
 
 #pragma mark Collection View Data Source functions
