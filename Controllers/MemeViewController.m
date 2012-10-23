@@ -56,6 +56,7 @@
         NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
         cell.image.image = [UIImage imageWithContentsOfFile:imageName];
         cell.title.text = meme[@"title"];
+        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone"]];
     }
     
     return cell;
@@ -78,7 +79,6 @@
         NSData* imData = [NSData dataWithContentsOfFile:imageName];
         
         [pb setData:imData forPasteboardType:@"public.png"];
-        
         NSLog(@"%@ copied", meme[@"title"]);
     }
 }

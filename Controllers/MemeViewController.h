@@ -12,6 +12,4 @@
 
 @interface MemeViewController : UICollectionViewController
 
-@property (weak, nonatomic) IBOutlet UICollectionView *view;
-
 @end

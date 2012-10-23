@@ -21,6 +21,7 @@
 		6320481B16361D9000FE566F /* MemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6320481A16361D9000FE566F /* MemeViewController.m */; };
 		6320481E16362DBE00FE566F /* MemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6320481D16362DBE00FE566F /* MemeModel.m */; };
 		637A4FE7163647490043209E /* MemeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A4FE6163647490043209E /* MemeTabBarController.m */; };
+		637A4FEF16365BB80043209E /* cell_bg_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 637A4FEE16365BB80043209E /* cell_bg_phone.png */; };
 		63887B7C16363B6B00E7092C /* MemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63887B7B16363B6B00E7092C /* MemeCell.m */; };
 		63887C3F1636417000E7092C /* actually_its_not_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C001636417000E7092C /* actually_its_not_ok.png */; };
 		63887C401636417000E7092C /* actually_pretty_badass.png in Resources */ = {isa = PBXBuildFile; fileRef = 63887C011636417000E7092C /* actually_pretty_badass.png */; };
@@ -109,6 +110,7 @@
 		6320481D16362DBE00FE566F /* MemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeModel.m; path = Models/MemeModel.m; sourceTree = SOURCE_ROOT; };
 		637A4FE5163647490043209E /* MemeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeTabBarController.h; path = Controllers/MemeTabBarController.h; sourceTree = SOURCE_ROOT; };
 		637A4FE6163647490043209E /* MemeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeTabBarController.m; path = Controllers/MemeTabBarController.m; sourceTree = SOURCE_ROOT; };
+		637A4FEE16365BB80043209E /* cell_bg_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg_phone.png; sourceTree = "<group>"; };
 		63887B7A16363B6B00E7092C /* MemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeCell.h; path = Views/MemeCell.h; sourceTree = SOURCE_ROOT; };
 		63887B7B16363B6B00E7092C /* MemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeCell.m; path = Views/MemeCell.m; sourceTree = SOURCE_ROOT; };
 		63887C001636417000E7092C /* actually_its_not_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actually_its_not_ok.png; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		632047FA163614B100FE566F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				637A4FEE16365BB80043209E /* cell_bg_phone.png */,
 				632047FB163614B100FE566F /* MemeEmoji-Info.plist */,
 				632047FC163614B100FE566F /* InfoPlist.strings */,
 				632047FF163614B100FE566F /* main.m */,
@@ -467,6 +470,7 @@
 				63887C7B1636417000E7092C /* y_u_no.png in Resources */,
 				63887C7C1636417000E7092C /* yes.png in Resources */,
 				63887C7D1636417000E7092C /* you_didnt_say.png in Resources */,
+				637A4FEF16365BB80043209E /* cell_bg_phone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
