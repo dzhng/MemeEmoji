@@ -72,10 +72,19 @@
         // set view settings
         NSDictionary* meme = [_models objectAtIndex:row];
         
-        //NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
         cell.image.image = [UIImage imageNamed:meme[@"file"]];
         cell.title.text = meme[@"title"];
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+        
+        // layer favorite icon on top of the cell
+        UIButton* favButton = [[UIButton alloc] init];
+        UIImage* iconImage = [UIImage imageNamed:@"favorite_icon.png"];
+        UIImage* selectedImage = [UIImage imageNamed:@"favorite_icon_selected.png"];
+        [favButton setImage:iconImage forState:UIControlStateNormal];
+        [favButton setImage:selectedImage forState:UIControlStateSelected];
+        favButton.frame = CGRectMake(2, 2, 26, 26);
+        
+        [cell.contentView addSubview:favButton];
     }
     
     return cell;

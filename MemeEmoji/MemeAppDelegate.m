@@ -55,7 +55,11 @@
     
     // set favoriates array for model
     if (!settings[@"favorites"]) {
-        NSMutableArray* favorites = [[NSMutableArray alloc] init];
+        NSMutableArray* favorites = [[NSMutableArray alloc] initWithObjects:
+                                     @{@"file": @"challenge_accepted.png", @"title": @"Challenge accepted"},
+                                     @{@"file": @"troll.png", @"title": @"Troll face"},
+                                     @{@"file": @"badass_over_here.png", @"title": @"Badass over here"},
+                                     nil];
         settings[@"favorites"] = favorites;
         [[MemeModel model] setFavorites:favorites];
         shouldSave = true;
