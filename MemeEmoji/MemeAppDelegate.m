@@ -12,8 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    shouldSave = false;
-    
     // get save path
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     savePath = [docPath stringByAppendingPathComponent:@"meme.plist"];
@@ -50,9 +48,6 @@
             if (![dict writeToFile:path atomically:NO]) {
                 NSLog(@"error writing to emoji plist");
             }
-            
-            // set save flag
-            shouldSave = true;
         }
         
         // set favoriates array for model
@@ -62,8 +57,6 @@
             // add default favorites
             [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:8]];
             [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:6]];
-            
-            shouldSave = true;
         } else {
             for (NSNumber* idx in settings[@"favorites"]) {
                 [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:[idx integerValue]]];
@@ -73,7 +66,6 @@
     @catch (NSException* exception) {
         // just start a new settings file
         settings = [[NSMutableDictionary alloc] init];
-        shouldSave = true;
         NSLog(@"settings file corrupted, creating new one. Exception: %@", [exception debugDescription]);
     }
     
@@ -90,35 +82,33 @@
 {
     @try {
         // save settings
-        if (shouldSave) {
-            NSLog(@"saving");
-            
-            // save all the favorites
-            [settings[@"favorites"] removeAllObjects];
-            for (int i = 0; i < [[[MemeModel model] memes] count]; i++) {
-                NSDictionary* item = [[[MemeModel model] memes] objectAtIndex:i];
-                if (item[@"favorite"]) {
-                    [settings[@"favorites"] addObject:[NSNumber numberWithInt:i]];
-                }
+        NSLog(@"saving");
+        
+        // save all the favorites
+        [settings[@"favorites"] removeAllObjects];
+        for (int i = 0; i < [[[MemeModel model] memes] count]; i++) {
+            NSDictionary* item = [[[MemeModel model] memes] objectAtIndex:i];
+            if (item[@"favorite"]) {
+                [settings[@"favorites"] addObject:[NSNumber numberWithInt:i]];
             }
-            
-            if (![[NSFileManager defaultManager] fileExistsAtPath:savePath]) {
-                NSLog(@"First time using app, creating file");
-                [[NSFileManager defaultManager] createFileAtPath:savePath contents:nil
-                                                      attributes:@{NSFileType:NSFileTypeRegular}];
-            }
-            
-            NSString *error = nil;
-            NSData *data = [NSPropertyListSerialization
-                            dataFromPropertyList:settings
-                            format:NSPropertyListXMLFormat_v1_0
-                            errorDescription:&error];
-            
-            if (data) {
-                [data writeToFile:savePath atomically:NO];
-            } else {
-                NSLog(@"plist error: %@", error);
-            }
+        }
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:savePath]) {
+            NSLog(@"First time using app, creating file");
+            [[NSFileManager defaultManager] createFileAtPath:savePath contents:nil
+                                                  attributes:@{NSFileType:NSFileTypeRegular}];
+        }
+        
+        NSString *error = nil;
+        NSData *data = [NSPropertyListSerialization
+                        dataFromPropertyList:settings
+                        format:NSPropertyListXMLFormat_v1_0
+                        errorDescription:&error];
+        
+        if (data) {
+            [data writeToFile:savePath atomically:NO];
+        } else {
+            NSLog(@"plist error: %@", error);
         }
     }
     @catch (NSException* exception) {

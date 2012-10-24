@@ -16,8 +16,6 @@
     
     // app settings
     NSMutableDictionary* settings;
-    
-    BOOL shouldSave;
 }
 
 @property (strong, nonatomic) UIWindow *window;
