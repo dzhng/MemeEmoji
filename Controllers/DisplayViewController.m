@@ -79,7 +79,7 @@
         UIImage* selectedImage = [UIImage imageNamed:@"favorite_icon_selected.png"];
         [favButton setImage:iconImage forState:UIControlStateNormal];
         [favButton setImage:selectedImage forState:UIControlStateSelected];
-        favButton.frame = CGRectMake(2.5, 2.5, 26, 26);
+        favButton.frame = CGRectMake(2, 0, 26, 26);
     
         // set button action
         [favButton addTarget:cell action:@selector(favoritePressed:) forControlEvents:UIControlEventTouchUpInside];
