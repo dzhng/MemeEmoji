@@ -64,7 +64,7 @@
                             <outlet property="delegate" destination="olc-He-EQY" id="iWd-tO-Cjp"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Memes" id="PDb-cn-6jC"/>
+                    <tabBarItem key="tabBarItem" title="Memes" image="meme_icon.png" id="PDb-cn-6jC"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07g-ig-Wxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Help" id="krJ-AD-Cw8"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="question_icon.png" id="krJ-AD-Cw8"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlM-a6-qAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-106" y="-28"/>
         </scene>
-        <!--Favorites View Controller - Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="Lih-nf-FsC">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="610-Md-b4b" customClass="FavoritesViewController" sceneMemberID="viewController">
@@ -167,13 +167,17 @@
                             <outlet property="delegate" destination="610-Md-b4b" id="oqS-o6-7Us"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="BpP-nl-nI8"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="BpP-nl-nI8"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YtH-gh-5sH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="428" y="322"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="meme_icon.png" width="30" height="30"/>
+        <image name="question_icon.png" width="25" height="22"/>
+    </resources>
     <classes>
         <class className="DisplayViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DisplayViewController.h"/>
