@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="428" y="1005"/>
         </scene>
-        <!--Meme Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Eb1-bZ-Bsz">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="eX3-0b-agt" customClass="MemeTabBarController" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="eX3-0b-agt" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="No9-Dj-EGr">
@@ -175,7 +175,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="meme_icon.png" width="30" height="30"/>
+        <image name="meme_icon.png" width="27" height="27"/>
         <image name="question_icon.png" width="25" height="22"/>
     </resources>
     <classes>
@@ -195,9 +195,6 @@
                 <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
-        </class>
-        <class className="MemeTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemeTabBarController.h"/>
         </class>
         <class className="MemeViewController" superclassName="DisplayViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MemeViewController.h"/>

@@ -25,7 +25,11 @@
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"view_bg.png"]];
     
     // make confirmation view
-    confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 300, 100)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(234, 5, 300, 100)];
+    } else {
+        confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 300, 100)];
+    }
     UIImage* confirmImage = [UIImage imageNamed:@"select_confirm.png"];
     confirmView.image = confirmImage;
     confirmView.alpha = 0;
@@ -75,11 +79,20 @@
         
         // layer favorite icon on top of the cell
         UIButton* favButton = cell.favoriteButton;
-        UIImage* iconImage = [UIImage imageNamed:@"favorite_icon.png"];
-        UIImage* selectedImage = [UIImage imageNamed:@"favorite_icon_selected.png"];
+        
+        UIImage* iconImage = nil;
+        UIImage* selectedImage = nil;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            iconImage = [UIImage imageNamed:@"favorite_icon_pad.png"];
+            selectedImage = [UIImage imageNamed:@"favorite_icon_selected_pad.png"];
+            favButton.frame = CGRectMake(2, 0, 52, 52);
+        } else {
+            iconImage = [UIImage imageNamed:@"favorite_icon.png"];
+            selectedImage = [UIImage imageNamed:@"favorite_icon_selected.png"];
+            favButton.frame = CGRectMake(2, 0, 26, 26);
+        }
         [favButton setImage:iconImage forState:UIControlStateNormal];
         [favButton setImage:selectedImage forState:UIControlStateSelected];
-        favButton.frame = CGRectMake(2, 0, 26, 26);
     
         // set button action
         [favButton addTarget:cell action:@selector(favoritePressed:) forControlEvents:UIControlEventTouchUpInside];

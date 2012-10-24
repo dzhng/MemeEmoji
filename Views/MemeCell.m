@@ -22,9 +22,17 @@
 - (void)setSelected:(BOOL)selected
 {
     if (selected) {
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone_selected.png"]];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_pad_selected.png"]];
+        } else {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone_selected.png"]];
+        }
     } else {
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_pad.png"]];
+        } else {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+        }
     }
 }
 
@@ -33,7 +41,11 @@
     meme = newMeme;
     self.image.image = [UIImage imageNamed:meme[@"file"]];
     self.title.text = meme[@"title"];
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_pad.png"]];
+    } else {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+    }
 }
 
 - (void)favoritePressed:(id)sender
