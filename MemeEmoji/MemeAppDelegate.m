@@ -74,7 +74,7 @@
         // just start a new settings file
         settings = [[NSMutableDictionary alloc] init];
         shouldSave = true;
-        NSLog(@"settings file corrupted, creating new one");
+        NSLog(@"settings file corrupted, creating new one. Exception: %@", [exception debugDescription]);
     }
     
     return YES;
@@ -88,36 +88,42 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // save settings
-    if (shouldSave) {
-        NSLog(@"saving");
-        
-        // save all the favorites
-        [settings[@"favorites"] removeAllObjects];
-        for (int i = 0; i < [[[MemeModel model] memes] count]; i++) {
-            NSDictionary* item = [[[MemeModel model] memes] objectAtIndex:i];
-            if (item[@"favorite"]) {
-                [settings[@"favorites"] addObject:[NSNumber numberWithInt:i]];
+    @try {
+        // save settings
+        if (shouldSave) {
+            NSLog(@"saving");
+            
+            // save all the favorites
+            [settings[@"favorites"] removeAllObjects];
+            for (int i = 0; i < [[[MemeModel model] memes] count]; i++) {
+                NSDictionary* item = [[[MemeModel model] memes] objectAtIndex:i];
+                if (item[@"favorite"]) {
+                    [settings[@"favorites"] addObject:[NSNumber numberWithInt:i]];
+                }
+            }
+            
+            if (![[NSFileManager defaultManager] fileExistsAtPath:savePath]) {
+                NSLog(@"First time using app, creating file");
+                [[NSFileManager defaultManager] createFileAtPath:savePath contents:nil
+                                                      attributes:@{NSFileType:NSFileTypeRegular}];
+            }
+            
+            NSString *error = nil;
+            NSData *data = [NSPropertyListSerialization
+                            dataFromPropertyList:settings
+                            format:NSPropertyListXMLFormat_v1_0
+                            errorDescription:&error];
+            
+            if (data) {
+                [data writeToFile:savePath atomically:NO];
+            } else {
+                NSLog(@"plist error: %@", error);
             }
         }
-        
-        if (![[NSFileManager defaultManager] fileExistsAtPath:savePath]) {
-            NSLog(@"First time using app, creating file");
-            [[NSFileManager defaultManager] createFileAtPath:savePath contents:nil
-                                                  attributes:@{NSFileType:NSFileTypeRegular}];
-        }
-        
-        NSString *error = nil;
-        NSData *data = [NSPropertyListSerialization
-                        dataFromPropertyList:settings
-                        format:NSPropertyListXMLFormat_v1_0
-                        errorDescription:&error];
-        
-        if (data) {
-            [data writeToFile:savePath atomically:NO];
-        } else {
-            NSLog(@"plist error: %@", error);
-        }
+    }
+    @catch (NSException* exception) {
+        [[NSFileManager defaultManager] removeItemAtPath:savePath error:nil];
+        NSLog(@"file save exception, deleting file. Exception: %@", [exception debugDescription]);
     }
 }
 
