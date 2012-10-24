@@ -55,6 +55,7 @@
     
     // set favoriates array for model
     if (!settings[@"favorites"]) {
+        settings[@"favorites"] = [[NSMutableArray alloc] init];
         
         // add default favorites
         [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:8]];
