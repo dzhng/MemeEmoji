@@ -126,9 +126,13 @@
         NSString* imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
         UIImage* sourceImage = [UIImage imageWithContentsOfFile:imageName];
         
-        NSInteger border = 20;
+        // we need to add a border on top and bottom of the image, so the entire meme can be displayed correctly in imessages
         CGSize size = [sourceImage size];
-        CGSize actualSize = CGSizeMake(size.width + 2*border, size.height + 2*border);
+        NSInteger borderTop = 40;
+        NSInteger borderBottom = 100;
+        NSInteger borderRight = 0.2*size.width;
+        NSInteger borderLeft = 0.02*size.width;
+        CGSize actualSize = CGSizeMake(size.width + borderLeft + borderRight, size.height + borderTop + borderBottom);
         
         UIGraphicsBeginImageContext(actualSize);
         CGContextRef context = UIGraphicsGetCurrentContext();
@@ -144,7 +148,7 @@
         CGRect backgroundRect = CGRectMake(0, 0, actualSize.width, actualSize.height);
         CGContextFillRect(context, backgroundRect);
         
-        CGRect imageRect = CGRectMake(border, border, size.width, size.height);
+        CGRect imageRect = CGRectMake(borderLeft, borderTop, size.width, size.height);
         [sourceImage drawInRect:imageRect blendMode:kCGBlendModeNormal alpha:1.0];
         
         UIImage *finalImage =  UIGraphicsGetImageFromCurrentImageContext();
