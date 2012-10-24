@@ -7,6 +7,8 @@
 //
 
 #import "MemeModel.h"
+#import "FavoritesViewController.h"
+#import "MemeViewController.h"
 
 @implementation MemeModel
 
@@ -24,8 +26,11 @@ static MemeModel* model = nil;
 {
     self = [super init];
     if (self) {
+        // initialize empty favorite array
+        self.favorites = [[NSMutableArray alloc] init];
+        
         // initialize memes
-        self.memes = [NSArray arrayWithObjects:
+        NSArray* memes = [NSArray arrayWithObjects:
             @{@"file": @"actually_its_not_ok.png", @"title": @"Actually it's not ok"},
             @{@"file": @"actually_pretty_badass.png", @"title": @"Actually pretty badass"},
             @{@"file": @"all_the_things.png", @"title": @"All the things"},
@@ -90,8 +95,34 @@ static MemeModel* model = nil;
             @{@"file": @"yes.png", @"title": @"YES"},
             @{@"file": @"you_didnt_say.png", @"title": @"You didn't say"},
             nil];
+        
+        self.memes = [[NSMutableArray alloc] init];
+        for (NSDictionary* meme in memes) {
+            [self.memes addObject:[meme mutableCopy]];
+        }
     }
     return self;
+}
+
+- (void)addItemToFavorite:(NSMutableDictionary *)item
+{
+    if (!item[@"favorite"] || [item[@"favorite"] boolValue] == NO) {
+        [self.favorites addObject:item];
+        item[@"favorite"] = [NSNumber numberWithBool:YES];
+        
+        [self.favoriteController refresh];
+    }
+}
+
+- (void)removeItemFromFavorite:(NSMutableDictionary *)item
+{
+    if (item[@"favorite"]) {
+        [self.favorites removeObject:item];
+        item[@"favorite"] = [NSNumber numberWithBool:NO];
+        
+        [self.memeController refresh];
+        [self.favoriteController refresh];
+    }
 }
 
 @end

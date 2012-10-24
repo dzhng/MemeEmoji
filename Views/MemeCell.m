@@ -28,13 +28,23 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setMeme:(NSMutableDictionary *)newMeme
 {
-    // Drawing code
+    meme = newMeme;
+    self.image.image = [UIImage imageNamed:meme[@"file"]];
+    self.title.text = meme[@"title"];
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
 }
-*/
+
+- (void)favoritePressed:(id)sender
+{
+    if (meme[@"favorite"] && [meme[@"favorite"] boolValue] == YES) {
+        [[MemeModel model] removeItemFromFavorite:meme];
+        [[[self.contentView subviews] lastObject] setSelected:NO];
+    } else {
+        [[MemeModel model] addItemToFavorite:meme];
+        [[[self.contentView subviews] lastObject] setSelected:YES];
+    }
+}
 
 @end

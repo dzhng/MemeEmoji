@@ -41,7 +41,7 @@
 
 - (void)refresh
 {
-    [self.collectionView setNeedsDisplay];
+    [self.collectionView reloadData];
 }
 
 #pragma mark Collection View Data Source functions
@@ -70,19 +70,26 @@
     // run sanity checks
     if(row < [_models count]) {
         // set view settings
-        NSDictionary* meme = [_models objectAtIndex:row];
-        
-        cell.image.image = [UIImage imageNamed:meme[@"file"]];
-        cell.title.text = meme[@"title"];
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+        NSMutableDictionary* meme = [_models objectAtIndex:row];
+        [cell setMeme:meme];
         
         // layer favorite icon on top of the cell
-        UIButton* favButton = [[UIButton alloc] init];
+        UIButton* favButton = cell.favoriteButton;
         UIImage* iconImage = [UIImage imageNamed:@"favorite_icon.png"];
         UIImage* selectedImage = [UIImage imageNamed:@"favorite_icon_selected.png"];
         [favButton setImage:iconImage forState:UIControlStateNormal];
         [favButton setImage:selectedImage forState:UIControlStateSelected];
-        favButton.frame = CGRectMake(2, 2, 26, 26);
+        favButton.frame = CGRectMake(2.5, 2.5, 26, 26);
+    
+        // set button action
+        [favButton addTarget:cell action:@selector(favoritePressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        // check if fav button is in favorites list
+        if (meme[@"favorite"] && [meme[@"favorite"] boolValue] == YES) {
+            [favButton setSelected:YES];
+        } else {
+            [favButton setSelected:NO];
+        }
         
         [cell.contentView addSubview:favButton];
     }

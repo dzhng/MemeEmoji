@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemeModel.h"
 #import "MemeCell.h"
 
 @interface DisplayViewController : UICollectionViewController

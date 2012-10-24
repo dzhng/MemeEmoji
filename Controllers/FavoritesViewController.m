@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     self.models = [[MemeModel model] favorites];
+    [[MemeModel model] setFavoriteController:self];
 }
 
 - (void)didReceiveMemoryWarning

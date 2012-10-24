@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class FavoritesViewController;
+@class MemeViewController;
+
 @interface MemeModel : NSObject
 
+// controller objects
+@property(retain, nonatomic) MemeViewController* memeController;
+@property(retain, nonatomic) FavoritesViewController* favoriteController;
+
 // array containing dictionary of memes
-@property(retain, nonatomic) NSArray* memes;
+@property(retain, nonatomic) NSMutableArray* memes;
 
 // array containing dictionary of favorites
 @property(retain, nonatomic) NSMutableArray* favorites;
@@ -21,5 +28,9 @@
 
 // initialize instance
 - (id)init;
+
+// set favorite status
+- (void)addItemToFavorite:(NSMutableDictionary*)item;
+- (void)removeItemFromFavorite:(NSMutableDictionary*)item;
 
 @end

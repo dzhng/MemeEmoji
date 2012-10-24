@@ -55,16 +55,16 @@
     
     // set favoriates array for model
     if (!settings[@"favorites"]) {
-        NSMutableArray* favorites = [[NSMutableArray alloc] initWithObjects:
-                                     @{@"file": @"challenge_accepted.png", @"title": @"Challenge accepted"},
-                                     @{@"file": @"troll.png", @"title": @"Troll face"},
-                                     @{@"file": @"badass_over_here.png", @"title": @"Badass over here"},
-                                     nil];
-        settings[@"favorites"] = favorites;
-        [[MemeModel model] setFavorites:favorites];
+        
+        // add default favorites
+        [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:8]];
+        [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:6]];
+        
         shouldSave = true;
     } else {
-        [[MemeModel model] setFavorites:settings[@"favorites"]];
+        for (NSNumber* idx in settings[@"favorites"]) {
+            [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:[idx integerValue]]];
+        }
     }
     
     return YES;
@@ -81,6 +81,15 @@
     // save settings
     if (shouldSave) {
         NSLog(@"saving");
+        
+        // save all the favorites
+        [settings[@"favorites"] removeAllObjects];
+        for (int i = 0; i < [[[MemeModel model] memes] count]; i++) {
+            NSDictionary* item = [[[MemeModel model] memes] objectAtIndex:i];
+            if (item[@"favorite"]) {
+                [settings[@"favorites"] addObject:[NSNumber numberWithInt:i]];
+            }
+        }
         
         if (![[NSFileManager defaultManager] fileExistsAtPath:savePath]) {
             NSLog(@"First time using app, creating file");

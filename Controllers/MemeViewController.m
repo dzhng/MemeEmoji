@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     self.models = [[MemeModel model] memes];
+    [[MemeModel model] setMemeController:self];
 }
 
 - (void)didReceiveMemoryWarning
