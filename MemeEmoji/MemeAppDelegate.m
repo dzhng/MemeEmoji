@@ -19,53 +19,62 @@
     savePath = [docPath stringByAppendingPathComponent:@"meme.plist"];
     NSLog(@"save path: %@", savePath);
     
-    // get app settings
-    NSData* settingsXML = [[NSFileManager defaultManager] contentsAtPath:savePath];
-    if (settingsXML) {
-        NSError* readError = nil;
-        NSPropertyListFormat format;
-        settings = (NSMutableDictionary *)[NSPropertyListSerialization
-                                propertyListWithData:settingsXML
-                                options:NSPropertyListMutableContainersAndLeaves
-                                format:&format
-                                error:&readError];
-    } else {
-        // since we can't read form property list, create a new settings array
+    // the reading part can be tricky, we want to catch all exceptions
+    @try {
+        // get app settings
+        NSData* settingsXML = [[NSFileManager defaultManager] contentsAtPath:savePath];
+        if (settingsXML) {
+            NSError* readError = nil;
+            NSPropertyListFormat format;
+            settings = (NSMutableDictionary *)[NSPropertyListSerialization
+                                    propertyListWithData:settingsXML
+                                    options:NSPropertyListMutableContainersAndLeaves
+                                    format:&format
+                                    error:&readError];
+        } else {
+            // since we can't read form property list, create a new settings array
+            settings = [[NSMutableDictionary alloc] init];
+        }
+        
+        if (!settings[@"emojiEnabled"]) {
+            NSLog(@"Emoji not enabled");
+            
+            settings[@"emojiEnabled"] = [NSNumber numberWithBool:TRUE];
+            
+            // enable emoji keyboard
+            NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:
+                              @"../../Library/Preferences/com.apple.Preferences.plist"];
+            
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+            [dict setObject:[NSNumber numberWithBool:YES] forKey:@"KeyboardEmojiEverywhere"];
+            if (![dict writeToFile:path atomically:NO]) {
+                NSLog(@"error writing to emoji plist");
+            }
+            
+            // set save flag
+            shouldSave = true;
+        }
+        
+        // set favoriates array for model
+        if (!settings[@"favorites"]) {
+            settings[@"favorites"] = [[NSMutableArray alloc] init];
+            
+            // add default favorites
+            [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:8]];
+            [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:6]];
+            
+            shouldSave = true;
+        } else {
+            for (NSNumber* idx in settings[@"favorites"]) {
+                [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:[idx integerValue]]];
+            }
+        }
+    }
+    @catch (NSException* exception) {
+        // just start a new settings file
         settings = [[NSMutableDictionary alloc] init];
-    }
-    
-    if (!settings[@"emojiEnabled"]) {
-        NSLog(@"Emoji not enabled");
-        
-        settings[@"emojiEnabled"] = [NSNumber numberWithBool:TRUE];
-        
-        // enable emoji keyboard
-        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:
-                          @"../../Library/Preferences/com.apple.Preferences.plist"];
-        
-        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
-        [dict setObject:[NSNumber numberWithBool:YES] forKey:@"KeyboardEmojiEverywhere"];
-        if (![dict writeToFile:path atomically:NO]) {
-            NSLog(@"error writing to emoji plist");
-        }
-        
-        // set save flag
         shouldSave = true;
-    }
-    
-    // set favoriates array for model
-    if (!settings[@"favorites"]) {
-        settings[@"favorites"] = [[NSMutableArray alloc] init];
-        
-        // add default favorites
-        [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:8]];
-        [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:6]];
-        
-        shouldSave = true;
-    } else {
-        for (NSNumber* idx in settings[@"favorites"]) {
-            [[MemeModel model] addItemToFavorite:[[[MemeModel model] memes] objectAtIndex:[idx integerValue]]];
-        }
+        NSLog(@"settings file corrupted, creating new one");
     }
     
     return YES;
