@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemeModel.h"
 
 @interface MemeAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    // where the save file is located
+    NSString* savePath;
+    
+    // app settings
+    NSMutableDictionary* settings;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

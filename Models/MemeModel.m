@@ -7,6 +7,8 @@
 //
 
 #import "MemeModel.h"
+#import "FavoritesViewController.h"
+#import "MemeViewController.h"
 
 @implementation MemeModel
 
@@ -24,9 +26,12 @@ static MemeModel* model = nil;
 {
     self = [super init];
     if (self) {
+        // initialize empty favorite array
+        self.favorites = [[NSMutableArray alloc] init];
+        
         // initialize memes
-        self.memes = [NSArray arrayWithObjects:
-            @{@"file": @"actually_its_not_ok.png", @"title": @"Actually it's not ok"},
+        NSArray* memes = [NSArray arrayWithObjects:
+            @{@"file": @"actually_its_not_ok.png", @"title": @"Actually it's not ok", @"background": @"black"},
             @{@"file": @"actually_pretty_badass.png", @"title": @"Actually pretty badass"},
             @{@"file": @"all_the_things.png", @"title": @"All the things"},
             @{@"file": @"are_you_fucking_kidding_me.png", @"title": @"Are you kidding me"},
@@ -48,7 +53,7 @@ static MemeModel* model = nil;
             @{@"file": @"forever_alone.png", @"title": @"Forever alone"},
             @{@"file": @"fuck_yea.png", @"title": @"Fuck yea"},
             @{@"file": @"fucking_done.png", @"title": @"Fucking done"},
-            @{@"file": @"gasp.png", @"title": @"WTF"},
+            @{@"file": @"gasp.png", @"title": @"WTF", @"background": @"black"},
             @{@"file": @"good_job.png", @"title": @"Good job"},
             @{@"file": @"gtfo.png", @"title": @"GTFO"},
             @{@"file": @"happy.png", @"title": @"Happy"},
@@ -76,22 +81,48 @@ static MemeModel* model = nil;
             @{@"file": @"sad_forever.png", @"title": @"Sad forever"},
             @{@"file": @"sad.png", @"title": @"Sad troll"},
             @{@"file": @"smile.png", @"title": @"Happy smile"},
-            @{@"file": @"suprised_cat.png", @"title": @"Suprised cat"},
+            @{@"file": @"suprised_cat.png", @"title": @"Suprised cat", @"background": @"black"},
             @{@"file": @"sweet_jesus_have_mercy.png", @"title": @"Sweet jesus have mercy"},
             @{@"file": @"troll.png", @"title": @"Troll face"},
             @{@"file": @"true_story.png", @"title": @"True story"},
             @{@"file": @"wait.png", @"title": @"Wait"},
             @{@"file": @"what_have_you_done.png", @"title": @"What have you done"},
             @{@"file": @"what.png", @"title": @"WHAT"},
-            @{@"file": @"whats_all_this_racket.png", @"title": @"What's all this racket"},
+            @{@"file": @"whats_all_this_racket.png", @"title": @"What's all this racket", @"background": @"black"},
             @{@"file": @"why.png", @"title": @"But why"},
             @{@"file": @"whyyy.png", @"title": @"Whyyyyyy"},
             @{@"file": @"y_u_no.png", @"title": @"Y U NO"},
             @{@"file": @"yes.png", @"title": @"YES"},
             @{@"file": @"you_didnt_say.png", @"title": @"You didn't say"},
             nil];
+        
+        self.memes = [[NSMutableArray alloc] init];
+        for (NSDictionary* meme in memes) {
+            [self.memes addObject:[meme mutableCopy]];
+        }
     }
     return self;
+}
+
+- (void)addItemToFavorite:(NSMutableDictionary *)item
+{
+    if (!item[@"favorite"] || [item[@"favorite"] boolValue] == NO) {
+        [self.favorites addObject:item];
+        item[@"favorite"] = [NSNumber numberWithBool:YES];
+        
+        [self.favoriteController refresh];
+    }
+}
+
+- (void)removeItemFromFavorite:(NSMutableDictionary *)item
+{
+    if (item[@"favorite"]) {
+        [self.favorites removeObject:item];
+        item[@"favorite"] = [NSNumber numberWithBool:NO];
+        
+        [self.memeController refresh];
+        [self.favoriteController refresh];
+    }
 }
 
 @end

@@ -1,8 +1,8 @@
 //
-//  MemeViewController.h
+//  FavoritesViewController.h
 //  MemeEmoji
 //
-//  Created by David Zhang on 10/22/12.
+//  Created by David Zhang on 10/23/12.
 //  Copyright (c) 2012 David Zhang. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 #import "DisplayViewController.h"
 #import "MemeModel.h"
 
-@interface MemeViewController : DisplayViewController
+@interface FavoritesViewController : DisplayViewController
 
 @end

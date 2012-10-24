@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemeModel.h"
 
 @interface MemeCell : UICollectionViewCell
+{
+    // meme model object
+    NSMutableDictionary* meme;
+}
 
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *title;
+
+- (void)setMeme:(NSMutableDictionary*)meme;
+- (void)favoritePressed:(id)sender;
 
 @end

@@ -22,19 +22,41 @@
 - (void)setSelected:(BOOL)selected
 {
     if (selected) {
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone_selected.png"]];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_pad_selected.png"]];
+        } else {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone_selected.png"]];
+        }
+    } else {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_pad.png"]];
+        } else {
+            self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
+        }
+    }
+}
+
+- (void)setMeme:(NSMutableDictionary *)newMeme
+{
+    meme = newMeme;
+    self.image.image = [UIImage imageNamed:meme[@"file"]];
+    self.title.text = meme[@"title"];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_pad.png"]];
     } else {
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg_phone.png"]];
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)favoritePressed:(id)sender
 {
-    // Drawing code
+    if (meme[@"favorite"] && [meme[@"favorite"] boolValue] == YES) {
+        [[MemeModel model] removeItemFromFavorite:meme];
+        [[[self.contentView subviews] lastObject] setSelected:NO];
+    } else {
+        [[MemeModel model] addItemToFavorite:meme];
+        [[[self.contentView subviews] lastObject] setSelected:YES];
+    }
 }
-*/
 
 @end
