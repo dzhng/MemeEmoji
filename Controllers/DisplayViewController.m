@@ -110,8 +110,34 @@
         // copy meme to clipboard
         UIPasteboard* pb = [UIPasteboard generalPasteboard];
         
-        NSString *imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
-        NSData* imData = [NSData dataWithContentsOfFile:imageName];
+        NSString* imageName = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:meme[@"file"]];
+        UIImage* sourceImage = [UIImage imageWithContentsOfFile:imageName];
+        
+        NSInteger border = 20;
+        CGSize size = [sourceImage size];
+        CGSize actualSize = CGSizeMake(size.width + 2*border, size.height + 2*border);
+        
+        UIGraphicsBeginImageContext(actualSize);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        // set color
+        if (meme[@"background"] && [meme[@"background"] isEqualToString:@"black"]) {
+            CGContextSetRGBFillColor(context, 0, 0, 0, 1.0);
+        } else {
+            CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+        }
+        
+        // draw image with background
+        CGRect backgroundRect = CGRectMake(0, 0, actualSize.width, actualSize.height);
+        CGContextFillRect(context, backgroundRect);
+        
+        CGRect imageRect = CGRectMake(border, border, size.width, size.height);
+        [sourceImage drawInRect:imageRect blendMode:kCGBlendModeNormal alpha:1.0];
+        
+        UIImage *finalImage =  UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        NSData* imData = UIImagePNGRepresentation(finalImage);
         
         [pb setData:imData forPasteboardType:@"public.png"];
         NSLog(@"%@ copied", meme[@"title"]);
