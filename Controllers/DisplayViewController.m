@@ -13,6 +13,9 @@
 // confirmation timer callback
 - (void)confirmTimerDone:(NSTimer*)timer;
 
+// reposition all dynamic views
+- (void)position;
+
 @end
 
 @implementation DisplayViewController
@@ -25,15 +28,25 @@
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"view_bg.png"]];
     
     // make confirmation view
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(234, 5, 300, 100)];
-    } else {
-        confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 300, 100)];
-    }
+    confirmView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 300, 100)];
     UIImage* confirmImage = [UIImage imageNamed:@"select_confirm.png"];
     confirmView.image = confirmImage;
     confirmView.alpha = 0;
+    
+    // make compose button
+    composeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [composeButton setImage:[UIImage imageNamed:@"compose_icon.png"] forState:UIControlStateNormal];
+    composeButton.alpha = 0;
+    [composeButton addTarget:self action:@selector(composePressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // add views
+    [self.view addSubview:composeButton];
     [self.view addSubview:confirmView];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self position];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,9 +56,32 @@
     NSLog(@"collection view received memory warning");
 }
 
+- (void)composePressed:(id)sender
+{
+    // start message app
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: @"sms:"]];
+}
+
 - (void)refresh
 {
     [self.collectionView reloadData];
+}
+
+- (void)position
+{
+    CGSize size = self.view.window.frame.size;
+    if (UIInterfaceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+        composeButton.frame = CGRectMake(size.height - 54, size.width - 110, 44, 37);
+        confirmView.frame = CGRectMake(size.height / 2 - 150, 5, 300, 100);
+    } else {
+        composeButton.frame = CGRectMake(size.width - 54, size.height - 110, 44, 37);
+        confirmView.frame = CGRectMake(size.width / 2 - 150, 5, 300, 100);
+    }
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self position];
 }
 
 #pragma mark Collection View Data Source functions
@@ -161,6 +197,9 @@
         
         // show copy confirm image
         confirmView.alpha = 1;
+        
+        // show compose button
+        composeButton.alpha = 1;
         
         // set off timer
         [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(confirmTimerDone:) userInfo:nil repeats:NO];

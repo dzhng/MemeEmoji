@@ -99,6 +99,7 @@
 		63BB24781637C88400D4A196 /* cell_bg_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BB24741637C88400D4A196 /* cell_bg_pad.png */; };
 		63BB24791637C88400D4A196 /* favorite_icon_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BB24751637C88400D4A196 /* favorite_icon_pad.png */; };
 		63BB247A1637C88400D4A196 /* favorite_icon_selected_pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BB24761637C88400D4A196 /* favorite_icon_selected_pad.png */; };
+		63BB247E1638BBF700D4A196 /* compose_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 63BB247D1638BBF700D4A196 /* compose_icon.png */; };
 		63F249B216368D7A00CDF8B4 /* view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F249B116368D7A00CDF8B4 /* view_bg.png */; };
 		63F249B5163692FC00CDF8B4 /* tutorial1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 63F249B4163692FC00CDF8B4 /* tutorial1.PNG */; };
 		63F249B81637318500CDF8B4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F249B71637318500CDF8B4 /* FavoritesViewController.m */; };
@@ -208,6 +209,7 @@
 		63BB24741637C88400D4A196 /* cell_bg_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg_pad.png; sourceTree = "<group>"; };
 		63BB24751637C88400D4A196 /* favorite_icon_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite_icon_pad.png; sourceTree = "<group>"; };
 		63BB24761637C88400D4A196 /* favorite_icon_selected_pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite_icon_selected_pad.png; sourceTree = "<group>"; };
+		63BB247D1638BBF700D4A196 /* compose_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compose_icon.png; sourceTree = "<group>"; };
 		63F249B116368D7A00CDF8B4 /* view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_bg.png; sourceTree = "<group>"; };
 		63F249B4163692FC00CDF8B4 /* tutorial1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial1.PNG; sourceTree = "<group>"; };
 		63F249B61637318500CDF8B4 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = Controllers/FavoritesViewController.h; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		632047FA163614B100FE566F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63BB247D1638BBF700D4A196 /* compose_icon.png */,
 				63BB24731637C88400D4A196 /* cell_bg_pad_selected.png */,
 				63BB24741637C88400D4A196 /* cell_bg_pad.png */,
 				63BB24751637C88400D4A196 /* favorite_icon_pad.png */,
@@ -549,6 +552,7 @@
 				63BB24781637C88400D4A196 /* cell_bg_pad.png in Resources */,
 				63BB24791637C88400D4A196 /* favorite_icon_pad.png in Resources */,
 				63BB247A1637C88400D4A196 /* favorite_icon_selected_pad.png in Resources */,
+				63BB247E1638BBF700D4A196 /* compose_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

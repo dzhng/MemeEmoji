@@ -14,10 +14,15 @@
 {
     // view to show confirm image
     UIImageView* confirmView;
+    
+    // compose button view
+    UIButton* composeButton;
 }
 
 // model array
 @property(retain, nonatomic) NSArray* models;
+
+- (void)composePressed:(id)sender;
 
 - (void)refresh;
 
