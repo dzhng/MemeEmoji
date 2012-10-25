@@ -199,7 +199,9 @@
         confirmView.alpha = 1;
         
         // show compose button
-        composeButton.alpha = 1;
+        [UIView animateWithDuration:0.4 animations:^{
+            composeButton.alpha = 1;
+        }];
         
         // set off timer
         [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(confirmTimerDone:) userInfo:nil repeats:NO];
