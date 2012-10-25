@@ -47,6 +47,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self position];
+    
+    // show compose button
+    [UIView animateWithDuration:0.4 animations:^{
+        composeButton.alpha = 1;
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -197,11 +202,6 @@
         
         // show copy confirm image
         confirmView.alpha = 1;
-        
-        // show compose button
-        [UIView animateWithDuration:0.4 animations:^{
-            composeButton.alpha = 1;
-        }];
         
         // set off timer
         [NSTimer scheduledTimerWithTimeInterval:0.4 target:self selector:@selector(confirmTimerDone:) userInfo:nil repeats:NO];
